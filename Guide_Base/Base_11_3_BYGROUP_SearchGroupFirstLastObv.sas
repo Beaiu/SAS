@@ -1,5 +1,9 @@
 * Use case of BY GROUP;
 * #BY GROUP#グループの最初と最後のオブザベーションの検索#FIRST.variable #LAST.variable;
+
+* SETステートメントと共にBYステートメントを使用する場合、SETステートメントに列記されるデータセットは（複数の）BY変数の値によって並べ替えられているか、適切なインデックスを持たなければなりません;
+* DATAステップは各BY変数に対して、一時変数FIRST.variableとLAST.variableを作成する。variableはBY変数名、これらの値は1または0。各BYグループの最初と最後のオブザベーションを識別する;
+
 proc sort data=company.usa out=work.temp;
     by dept;
 run;
